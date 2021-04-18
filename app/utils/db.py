@@ -5,3 +5,12 @@ mg.connect(host="mongodb+srv://admin:afnan921@sitedata.fe9yi.mongodb.net/myFirst
 class User(mg.Document):
     email = mg.StringField()
     password = mg.StringField()
+
+class Post(mg.Document):
+    name = mg.StringField()
+    address = mg.StringField()
+    to = mg.StringField()
+    contact = mg.StringField()
+    gender = mg.StringField()
+    no = mg.StringField()
+    child = mg.BooleanField()
