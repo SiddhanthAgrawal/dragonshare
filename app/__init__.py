@@ -1,4 +1,5 @@
 
+from functools import reduce
 from flask import *
 from flask_cors import CORS
 from app.utils.db import *
@@ -29,6 +30,9 @@ def login():
         users = User.objects(email=email)
         if len(users) == 0:
             flash("invalid credentials")
+            return redirect("/login")
+        if (users[0].password != password):
+            flash("incorrect password")
             return redirect("/login")
         session["email"] = email
         return redirect("/")
