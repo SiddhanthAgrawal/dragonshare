@@ -15,3 +15,9 @@ def login():
         return render_template("login.html")
     else:
         pass
+
+@app.route("/register")
+def register():
+    return render_template("register.html")
+    
+    pass
