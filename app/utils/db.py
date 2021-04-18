@@ -8,9 +8,9 @@ class User(mg.Document):
 
 class Post(mg.Document):
     name = mg.StringField()
-    address = mg.StringField()
+    start = mg.StringField()
     to = mg.StringField()
     contact = mg.StringField()
     gender = mg.StringField()
     no = mg.StringField()
-    child = mg.BooleanField()
+    child = mg.StringField()

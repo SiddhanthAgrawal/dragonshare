@@ -4,15 +4,15 @@ from flask_cors import CORS
 from app.utils.db import *
 
 app = Flask(__name__)
-app.secret_key = "hjsdfhjksdfhksdfjkln"
+app.secret_key = "hjsdfsdsdfhksdfjksdfln"
 CORS(app)
 
 @app.route("/", methods=["GET"])
 def home():
     if "email" in session:
-        return render_template("home.html")
+        return render_template("Postpage.html")
     else:
-        return redirect("/login")
+        return render_template("index.html")
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -20,6 +20,7 @@ def login():
     if request.method == "GET":
         return render_template("login.html")
     else:
+
         email = request.form["email"]
         password = request.form["password"]
         users = User.objects(email=email)
@@ -54,3 +55,12 @@ def register():
         session["email"] = email
         User(email=email, password=pw0).save()
         return redirect("/")
+
+@app.route("/newpost", methods=["GET", "POST"])
+def newPost():
+    if request.method == "GET":
+        return render_template("form.html")
+    data = request.form.to_dict()
+
+    Post(name=data["name"], start=data["from"], to=data["to"], contact=data["phone"], gender=data["gender"], no=data["no"], child=data["child"]).save()
+    return "got the data"
