@@ -10,7 +10,8 @@ CORS(app)
 @app.route("/", methods=["GET"])
 def home():
     if "email" in session:
-        return render_template("Postpage.html")
+        
+        return render_template("Postpage.html", data=Post.objects())
     else:
         return render_template("index.html")
 
@@ -63,4 +64,4 @@ def newPost():
     data = request.form.to_dict()
 
     Post(name=data["name"], start=data["from"], to=data["to"], contact=data["phone"], gender=data["gender"], no=data["no"], child=data["child"]).save()
-    return "got the data"
+    return redirect("/")
