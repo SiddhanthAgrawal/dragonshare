@@ -20,7 +20,14 @@ def login():
     if request.method == "GET":
         return render_template("login.html")
     else:
-        return "nyom"
+        email = request.form["email"]
+        password = request.form["password"]
+        users = User.objects(email=email)
+        if len(users) == 0:
+            flash("invalid credentials")
+            return redirect("/login")
+        session["email"] = email
+        return redirect("/")
 
 @app.route("/logout", methods=["GET"])
 def logout():

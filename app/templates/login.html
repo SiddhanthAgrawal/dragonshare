@@ -9,10 +9,17 @@
 <body>
     login here <br>
     <form action="/login" method="post">
-        email: <input type="text" name="username" id=""> <br>
+        email: <input type="text" name="email" id=""> <br>
         password: <input type="text" name="password" id=""> <br>
         <input type="submit" value="submit"> <br>
-    </form>
+    </form> <br>
+
+    {% with messages = get_flashed_messages() %}
+    {% for message in messages %}
+        {{ message }} <br>
+    {% endfor %}
+    {% endwith %}
+    <br>
 
     <a href="/register">register here</a>
 </body>
