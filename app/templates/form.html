@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.1/assets/img/favicons/favicon.ico">
+
+    <title>Share Request</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="static/form-validation.css" rel="stylesheet">
+  </head>
+
+  <body class="bg-light">
+
+    <div class="container">
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="../../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <h2>Post Your Request</h2>
+        <p class="lead">Please fill in the details to submit your request</p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 order-md-1">
+          <form class="needs-validation" novalidate>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="firstName">First name</label>
+                <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" value="" required>
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName">Last name</label>
+                <input type="text" class="form-control" id="lastName" placeholder="Enter your last name" value="" required>
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="from">Leaving From</label>
+                <input type="text" class="form-control" id="from" placeholder="Enter your starting location" value="" required>
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="to">Going To</label>
+                <input type="text" class="form-control" id="lastName" placeholder="Enter your destination" value="" required>
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="PhoneNo">Contact Number</label>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1">+1</span>
+                  <input type="text" id="PhoneNo" class="form-control" placeholder="Phone number on which you wish to be contacted" aria-label="Username" aria-describedby="basic-addon1" required>
+                </div>
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="gender">Gender</label>
+                <select class="custom-select d-block w-100" id="gender" required>
+                  <option value="">Choose...</option>
+                  <option>Female</option>
+                  <option>Male</option>
+                  <option>Non Binary</option>
+                  <option>Prefer Not To Say</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please provide a valid state.
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="NoPassengers">No. of Passengers</label>
+                <input type="text" class="form-control" id="NoPassengers" placeholder="Number of Passengers travelling on this request" value="" required>
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="PetOrChild">Do you have a pet or a child with you?</label>
+                <select class="custom-select d-block w-100" id="PetOrChild" required>
+                  <option value="">Choose...</option>
+                  <option>Pet</option>
+                  <option>Child</option>
+                  <option>Both</option>
+                  <option>No</option>
+                </select>
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+            </div>
+
+            <hr class="mb-4">
+            <center>
+            <button class="btn btn-primary btn-lg mb-4" type="submit">Submit</button></center>
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Privacy</a></li>
+          <li class="list-inline-item"><a href="#">Terms</a></li>
+          <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+      </footer>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+  </body>
+</html>
