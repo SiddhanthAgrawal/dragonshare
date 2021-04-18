@@ -5,6 +5,13 @@
     <title>Active Requests</title>
   </head>
   <body>
+    <script>
+      
+      function contacted (this) {
+        console.log(this)
+      }
+
+    </script>
     <div class="container">
       <div class="py-5 text-center">
         <img class="d-block mx-auto mb-4" src="static/images/DS.png" alt="" width="72" height="72">
@@ -13,7 +20,6 @@
     <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">Full Name</th>
       <th scope="col"></th>
       <th scope="col">Leaving From</th>
@@ -38,7 +44,9 @@
         <td>{{row.gender}}</td>
         <td>{{row.no}}</td>
         <td>{{row.child}}</td>
-        <td><button type="button" class="btn btn-success">Contacted</button></td>
+        <form action="/postdelete/{{row.idNo}}" method="post">
+          <td><button type="submit" class="btn btn-success" number={{row.idNo}}">Contacted</button></td>
+       </form>
       </tr>
     {% endfor %}
 

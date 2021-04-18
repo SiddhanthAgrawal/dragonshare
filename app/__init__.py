@@ -2,9 +2,10 @@
 from flask import *
 from flask_cors import CORS
 from app.utils.db import *
+from random import randint
 
 app = Flask(__name__)
-app.secret_key = "hjsdfsdsdfhksdfjksdfln"
+app.secret_key = "hjsdfsdsddfhksdfjksdfln"
 CORS(app)
 
 @app.route("/", methods=["GET"])
@@ -63,5 +64,12 @@ def newPost():
         return render_template("form.html")
     data = request.form.to_dict()
 
-    Post(name=data["name"], start=data["from"], to=data["to"], contact=data["phone"], gender=data["gender"], no=data["no"], child=data["child"]).save()
+    Post(name=data["name"], start=data["from"], to=data["to"], 
+        contact=data["phone"], gender=data["gender"], no=data["no"], 
+        child=data["child"], idNo=randint(11111111, 99999999)).save()
+    return redirect("/")
+
+@app.route("/postdelete/<int:postid>", methods=["POST"])
+def deletePost(postid):
+    Post.objects(idNo=postid)[0].delete()
     return redirect("/")

@@ -7,6 +7,7 @@ class User(mg.Document):
     password = mg.StringField()
 
 class Post(mg.Document):
+    idNo = mg.IntField()
     name = mg.StringField()
     start = mg.StringField()
     to = mg.StringField()
