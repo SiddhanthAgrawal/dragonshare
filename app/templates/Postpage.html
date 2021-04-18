@@ -29,50 +29,19 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td colspan="2">Mark Otto</td>
-      <td colspan="2">The Korman Center, 15 S 33rd St, Philadelphia, PA 19104</td>
-      <td colspan="2">3101 W Girard Ave, Philadelphia, PA 19130</td>
-      <td colspan="2">+1 (215) 452-9876</td>
-      <td>M</td>
-      <td>1</td>
-      <td>No</td>
-      <td><button type="button" class="btn btn-success">Contacted</button></td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td colspan="2">Jacob Thornton</td>
-      <td colspan="2">613 N 32nd St 2 floor, Philadelphia, PA 19104</td>
-      <td colspan="2">129 S 30th St, Philadelphia, PA 19104</td>
-      <td colspan="2">+1 (215) 452-9876</td>
-      <td>M</td>
-      <td>1</td>
-      <td>Child</td>
-      <td><button type="button" class="btn btn-success">Contacted</button></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Harry Tubman</td>
-      <td colspan="2">3210 Chestnut St, Philadelphia, PA 19104</td>
-      <td colspan="2">1900 Chestnut St, Philadelphia, PA 191036</td>
-      <td colspan="2">+1 (215) 452-9876</td>
-      <td>M</td>
-      <td>1</td>
-      <td>Pet</td>
-      <td><button type="button" class="btn btn-success">Contacted</button></td>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td colspan="2">Jacob Gonzalez</td>
-      <td colspan="2">2501 Walnut St, Philadelphia, PA 19103</td>
-      <td colspan="2">Douglassville, PA 19518</td>
-      <td colspan="2">+1 (215) 452-9876</td>
-      <td>M</td>
-      <td>1</td>
-      <td>Both</td>
-      <td><button type="button" class="btn btn-success">Contacted</button></td>
-    </tr>
+    {% for row in data %}
+      <tr>
+        <td colspan="2">{{row.name}}</td>
+        <td colspan="2">{{row.start}}</td>
+        <td colspan="2">{{row.to}}</td>
+        <td colspan="2">{{row.contact}}</td>
+        <td>{{row.gender}}</td>
+        <td>{{row.no}}</td>
+        <td>{{row.child}}</td>
+        <td><button type="button" class="btn btn-success">Contacted</button></td>
+      </tr>
+    {% endfor %}
+
     
   </tbody>
 </table>
