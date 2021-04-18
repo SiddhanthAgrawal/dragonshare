@@ -1,24 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <title>Register</title>
-</head>
-<body>
-    only for drexel students <br>
-    <form action="/register" method="post">
-        email: <input type="text" name="email" id=""> <br>
-        password: <input type="password" name="password0" id=""> <br>
-        password confirm: <input type="password" name="password1" id=""> <br>
-        <input type="submit" value="submit">
-    </form> <br>
+    <link href="static/signin.css" rel="stylesheet">
+  </head>
 
-    {% with messages = get_flashed_messages() %}
-    {% for message in messages %}
-        {{ message }} <br>
-    {% endfor %}
-    {% endwith %}
-</body>
+  <body class="text-center">
+    <form class="form-signin" action="/register" method="POST">
+    
+      <img class="mb-4" src="static/images/DS.png" alt="Logo" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Register</h1>
+    
+      <label for="inputEmail" class="sr-only">Email address</label>
+      <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+      
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input name="password0" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+      
+      <label for="inputPassword" class="sr-only">Password Confirm</label>
+      <input name="password1" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+      
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+    
+    </form>
+  </body>
 </html>

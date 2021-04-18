@@ -5,6 +5,9 @@ html
   overflow-x:none;
   margin: 0;
 }
+body{
+  overflow-x: hidden;
+}
 .headline
 {
   position: relative;
@@ -148,7 +151,6 @@ text-decoration-color: yellow;
   position: relative;
   text-align: center;
   background-color: #052b4c;
-  top: 9em;
   padding: 1em;
   overflow-y:hidden;
 }
@@ -169,7 +171,7 @@ left: 5em;
   display: grid;
   grid-column-gap: 60px;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 
+  overflow-x: none;
 }
 .item1
 {

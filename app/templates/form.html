@@ -14,31 +14,32 @@
 
     <!-- Custom styles for this template -->
     <link href="static/form-validation.css" rel="stylesheet">
+    <link href="Postpage.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body class="bg-light">
 
     <div class="container">
       <div class="py-5 text-center">
-        <img class="d-block mx-auto mb-4" src="../../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <img class="d-block mx-auto mb-4" src="static/images/DS.png" alt="" width="72" height="72">
         <h2>Post Your Request</h2>
         <p class="lead">Please fill in the details to submit your request</p>
       </div>
 
       <div class="row">
         <div class="col-md-12 order-md-1">
-          <form class="needs-validation" novalidate>
+          <form action="/newpost" method="post" class="needs-validation" novalidate>
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="firstName">First name</label>
-                <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" value="" required>
+                <input name="firstName" type="text" class="form-control" id="firstName" placeholder="Enter your first name" value="" required>
                 <div class="invalid-feedback">
                   Valid first name is required.
                 </div>
               </div>
               <div class="col-md-6 mb-3">
                 <label for="lastName">Last name</label>
-                <input type="text" class="form-control" id="lastName" placeholder="Enter your last name" value="" required>
+                <input name="lastName" type="text" class="form-control" id="lastName" placeholder="Enter your last name" value="" required>
                 <div class="invalid-feedback">
                   Valid last name is required.
                 </div>
@@ -48,14 +49,14 @@
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="from">Leaving From</label>
-                <input type="text" class="form-control" id="from" placeholder="Enter your starting location" value="" required>
+                <input name="from" type="text" class="form-control" id="from" placeholder="Enter your starting location" value="" required>
                 <div class="invalid-feedback">
                   Valid first name is required.
                 </div>
               </div>
               <div class="col-md-6 mb-3">
                 <label for="to">Going To</label>
-                <input type="text" class="form-control" id="lastName" placeholder="Enter your destination" value="" required>
+                <input name="to" type="text" class="form-control" id="lastName" placeholder="Enter your destination" value="" required>
                 <div class="invalid-feedback">
                   Valid last name is required.
                 </div>
@@ -67,7 +68,7 @@
                 <label for="PhoneNo">Contact Number</label>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1">+1</span>
-                  <input type="text" id="PhoneNo" class="form-control" placeholder="Phone number on which you wish to be contacted" aria-label="Username" aria-describedby="basic-addon1" required>
+                  <input name="phone" type="text" id="PhoneNo" class="form-control" placeholder="Phone number on which you wish to be contacted" aria-label="Username" aria-describedby="basic-addon1" required>
                 </div>
                 <div class="invalid-feedback">
                   Valid first name is required.
@@ -75,7 +76,7 @@
               </div>
               <div class="col-md-6 mb-3">
                 <label for="gender">Gender</label>
-                <select class="custom-select d-block w-100" id="gender" required>
+                <select name="gender" class="custom-select d-block w-100" id="gender" required>
                   <option value="">Choose...</option>
                   <option>Female</option>
                   <option>Male</option>
@@ -91,14 +92,14 @@
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="NoPassengers">No. of Passengers</label>
-                <input type="text" class="form-control" id="NoPassengers" placeholder="Number of Passengers travelling on this request" value="" required>
+                <input name="no" type="text" class="form-control" id="NoPassengers" placeholder="Number of Passengers travelling on this request" value="" required>
                 <div class="invalid-feedback">
                   Valid first name is required.
                 </div>
               </div>
               <div class="col-md-6 mb-3">
                 <label for="PetOrChild">Do you have a pet or a child with you?</label>
-                <select class="custom-select d-block w-100" id="PetOrChild" required>
+                <select name="child" class="custom-select d-block w-100" id="PetOrChild" required>
                   <option value="">Choose...</option>
                   <option>Pet</option>
                   <option>Child</option>
