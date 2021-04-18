@@ -68,11 +68,11 @@ def newPost():
     if request.method == "GET":
         return render_template("form.html")
     data = request.form.to_dict()
+    print(data["phone"])
 
-    if (not re_search('^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$', data["no"])):
+    if (len(data["phone"]) != 10):
         flash("invalid phone number")
-        return redirect("/")
-
+        return redirect("/newpost")
     Post(name=data["name"], start=data["from"], to=data["to"], 
         contact=data["phone"], gender=data["gender"], no=data["no"], 
         child=data["child"], idNo=randint(11111111, 99999999)).save()
