@@ -3,6 +3,7 @@ from flask import *
 from flask_cors import CORS
 from app.utils.db import *
 from random import randint
+from re import search as re_search
 
 app = Flask(__name__)
 app.secret_key = "hjsdfsdsddfhksdfjksdfln"
@@ -63,6 +64,10 @@ def newPost():
     if request.method == "GET":
         return render_template("form.html")
     data = request.form.to_dict()
+
+    if (not re_search('^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$', data["no"])):
+        flash("invalid phone number")
+        return redirect("/")
 
     Post(name=data["name"], start=data["from"], to=data["to"], 
         contact=data["phone"], gender=data["gender"], no=data["no"], 
